@@ -1,3 +1,4 @@
+
 import Card from './Card';
 import Image from 'next/image';
 import { db } from '../utils/firebase';
@@ -346,9 +347,9 @@ async function cardPicker() {
     cardsArray = shuffle(cardsArray);
 
     // Make variables for the first three cards in the deck and return them in an array
-    let cardOne = cardsArray[1];
-    let cardTwo = cardsArray[2];
-    let cardThree = cardsArray[3];
+    let cardOne = cardsArray[0];
+    let cardTwo = cardsArray[1];
+    let cardThree = cardsArray[2];
 
     return [cardOne, cardTwo, cardThree];
 
@@ -358,39 +359,56 @@ export default async function Cards() {
 
     let spread = await cardPicker();
 
-    console.log(spread);
-
-    let cardOne = spread[1];
-    let cardTwo = spread[2];
-    let cardThree = spread[3];
+    let cardOne = spread[0];
+    let cardTwo = spread[1];
+    let cardThree = spread[2];
 
     return (
-        <div>
+        <div className="flex flex-col justify-center">
             <div className="flex flex-row justify-center">
-                <Image
+                <div className="flex flex-col justify-center">
+                    <div className="ml-2">
+                        <Card {...cardOne} />
+                    </div>
+                    <div className="flex justify-center text-align align-center ml-2 mt-2">
+                        The Past
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center">
+                    <div className="ml-2 mr-2">
+                        <Card {...cardTwo} />
+                    </div>
+                    <div className="flex justify-center text-align align-center ml-2 mr-2 mt-2">
+                        The Present
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center">
+                    <div className="mr-2">
+                        <Card {...cardThree} />
+                    </div>
+                    <div className="flex justify-center text-align align-center mr-2 mt-2">
+                        The Future
+                    </div>
+                </div>
+                {/* <Image
+                    id="pastCard"
                     src="/Images/CardBack.webp"
                     width="0"
                     height="0"
                     sizes="100vh"
                     className="h-60 w-auto mr-2"
                     alt="Back of Card"
-                />
-                <Image
-                    src="https://www.tarotcardmeanings.net/images/tarotcards/tarot-magician.jpg"
-                    width="0"
-                    height="0"
-                    sizes="100vh"
-                    className="h-60 w-auto ml-2 mr-2"
-                    alt="Back of Card"
-                />
-                <Image
-                    src="/Images/CardBack.webp"
-                    width="0"
-                    height="0"
-                    sizes="100vh"
-                    className="h-60 w-auto ml-2"
-                    alt="Back of Card"
-                />
+                    style={{}}
+                    onClick={(Card) =>  {
+                        "use client"
+                        document.getElementById("pastCard").src=cardOne.Image;
+                        document.getElementById("pastCard").alt="Tarot card representing the past.";
+                        if (cardOne.Orientation === "Reversed") {
+                            document.getElementById("pastCard").className="h-60 w-auto mr-2 scaleX(-1) scaleY(-1)";
+                        }
+
+                    }}
+                /> */}
             </div>
         </div>
     )
