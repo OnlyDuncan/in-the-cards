@@ -1,5 +1,6 @@
 "use client";
 
+import ReadMoreModal from './Modal.js';
 import CardContents from './CardContents';
 import { CSSTransition } from 'react-transition-group';
 import { useState } from 'react';
@@ -73,10 +74,19 @@ export default function Cards ({...props}) {
                                     setShowFrontPast((v) => !v);
                                 }} />
                             </CSSTransition>
+                            <div className="flex justify-center text-align align-center ml-2 mt-2">
+                                The Past
+                            </div>
+                            <CSSTransition
+                                in={showFrontPast}
+                                timeout={300}
+                                classNames='flip mt-4'
+                            >
+                                <ReadMoreModal {...spread[0]} onClick={() => {
+                                    setShowFrontPast((v) => !v);
+                                }} />
+                            </CSSTransition>
                         </div>
-                    </div>
-                    <div className="flex justify-center text-align align-center ml-2 mt-2">
-                        The Past
                     </div>
                 </div>
                 <div className="flex flex-col justify-center">

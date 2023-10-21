@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export default function CardContents ({onClick, ...props}) {
+
     return (
         <div className="card" onClick={onClick}>
             <div className="card-back">
