@@ -7,7 +7,6 @@ export default function CardContents ({onClick, ...props}) {
         <div className="card" onClick={onClick}>
             <div className="card-back">
                 <Image
-                    id="cardOne"
                     src={props.Image}
                     width="0"
                     height="0"
