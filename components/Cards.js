@@ -51,16 +51,15 @@ export default function Cards ({...props}) {
 
     const handleClick = () => {
         setSpread(deckBuilder(cardArray));
-        setShowFrontPast(false);
     }
 
     return (
         <div className="flex flex-col justify-center">
-            {/* <div className="flex justify-center mb-2">
+            <div className="flex justify-center mb-2">
                 <button type="button" onClick={handleClick}>
                     Redo
                 </button>
-            </div> */}
+            </div>
             <div className="flex flex-row justify-center">
                 <div className="flex flex-col justify-center">
                     <div className="ml-2">
