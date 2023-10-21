@@ -51,16 +51,12 @@ export default function Cards ({...props}) {
 
     const handleClick = () => {
         setSpread(deckBuilder(cardArray));
-        // location.reload();
     }
 
     return (
         <div className="flex flex-col justify-center">
             <div className="flex justify-center mb-2">
-                <button type="button" onClick={() => {
-                    setSpread(deckBuilder(cardArray));
-                    location.reload();
-                }}>
+                <button type="button" onClick={handleClick}>
                     Redo
                 </button>
             </div>
