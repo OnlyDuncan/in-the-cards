@@ -50,8 +50,8 @@ export default function Cards ({...props}) {
     const [spread, setSpread] = useState(deckBuilder(cardArray));
 
     const handleClick = () => {
-        location.reload();
         setSpread(deckBuilder(cardArray));
+        location.reload();
     }
 
     return (
