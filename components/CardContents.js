@@ -42,7 +42,7 @@ export default function CardContents ({onClick, ...props}) {
                     width="0"
                     height="0"
                     sizes="100vh"
-                    className={`h-full w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""}`}
+                    className={`h-full w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""} ${tarotOrientation === "Upright" ? "" : "reversed"}`}
                     alt="Tarot Card"
                     onClick={() => setIsOpen(true)}
                 />
@@ -71,7 +71,7 @@ export default function CardContents ({onClick, ...props}) {
                             width="0"
                             height="0"
                             sizes="100vh"
-                            className={`h-60 w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""}`}
+                            className={`h-60 w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""} ${tarotOrientation === "Upright" ? "" : "reversed"}`}
                             alt={tarotTitle}
                         />
                     </div>

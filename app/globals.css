@@ -105,17 +105,3 @@ body {
 .flip-exit-done {
   transform: rotateY(180deg);
 }
-
-/* .flip-enter {
-  transform: rotateY(180deg);
-} */
-
-/* .flip-enter-active {
-  transform: rotateY(0deg);
-  transition: transform 300ms;
-  transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
-} */
-
-/* .flip-enter-done {
-  transform: rotateY(0deg);
-} */
