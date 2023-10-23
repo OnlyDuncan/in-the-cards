@@ -1,6 +1,5 @@
 "use client";
 
-import ReadMoreModal from './Modal.js';
 import CardContents from './CardContents';
 import { CSSTransition } from 'react-transition-group';
 import { useState } from 'react';
@@ -71,21 +70,12 @@ export default function Cards ({...props}) {
                                 classNames='flip'
                             >
                                 <CardContents {...spread[0]} onClick={() => {
-                                    setShowFrontPast((v) => !v);
+                                    setShowFrontPast(false);
                                 }} />
                             </CSSTransition>
                             <div className="flex justify-center text-align align-center ml-2 mt-2">
                                 The Past
                             </div>
-                            <CSSTransition
-                                in={showFrontPast}
-                                timeout={300}
-                                classNames='flip mt-4'
-                            >
-                                <ReadMoreModal {...spread[0]} onClick={() => {
-                                    setShowFrontPast((v) => !v);
-                                }} />
-                            </CSSTransition>
                         </div>
                     </div>
                 </div>
@@ -98,13 +88,13 @@ export default function Cards ({...props}) {
                                 classNames='flip'
                             >
                                 <CardContents {...spread[1]} onClick={() => {
-                                    setShowFrontPresent((v) => !v);
+                                    setShowFrontPresent(false);
                                 }} />
                             </CSSTransition>
+                            <div className="flex justify-center text-align align-center ml-2 mr-2 mt-2">
+                                The Present
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex justify-center text-align align-center ml-2 mr-2 mt-2">
-                        The Present
                     </div>
                 </div>
                 <div className="flex flex-col justify-center">
@@ -116,13 +106,13 @@ export default function Cards ({...props}) {
                                 classNames='flip'
                             >
                                 <CardContents {...spread[2]} onClick={() => {
-                                    setShowFrontFuture((v) => !v);
+                                    setShowFrontFuture(false);
                                 }} />
                             </CSSTransition>
+                            <div className="flex justify-center text-align align-center mr-2 mt-2">
+                                The Future
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex justify-center text-align align-center mr-2 mt-2">
-                        The Future
                     </div>
                 </div>
             </div>
