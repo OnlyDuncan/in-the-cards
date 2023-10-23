@@ -8,18 +8,10 @@ export default function CardContents ({onClick, ...props}) {
     let tarotCard = props;
     let tarotTitle = `${tarotCard.Title}`;
     let tarotOrientation = `${tarotCard.Orientation}`;
-    console.log(tarotOrientation);
     let tarotImage = `${tarotCard.Image}`;
     let tarotMeaning = `${tarotCard.Meaning}`;
 
     const [isOpen, setIsOpen] = useState(false);
-    const [isReversed, setIsReversed] = useState(false);
-
-    // if (tarotOrientation === "Reversed") {
-    //     setIsReversed(true);
-    // } else {
-    //     setIsReversed(false);
-    // }
 
     const styles = {
         overlay: {
