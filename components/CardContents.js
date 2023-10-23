@@ -5,12 +5,21 @@ import { useState } from 'react';
 
 export default function CardContents ({onClick, ...props}) {
 
-    const tarotCard = props;
-    const tarotTitle = `${tarotCard.Title}`;
-    const tarotImage = `${tarotCard.Image}`;
-    const tarotMeaning = `${tarotCard.Meaning}`;
+    let tarotCard = props;
+    let tarotTitle = `${tarotCard.Title}`;
+    let tarotOrientation = `${tarotCard.Orientation}`;
+    console.log(tarotOrientation);
+    let tarotImage = `${tarotCard.Image}`;
+    let tarotMeaning = `${tarotCard.Meaning}`;
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isReversed, setIsReversed] = useState(false);
+
+    // if (tarotOrientation === "Reversed") {
+    //     setIsReversed(true);
+    // } else {
+    //     setIsReversed(false);
+    // }
 
     const styles = {
         overlay: {
@@ -27,8 +36,9 @@ export default function CardContents ({onClick, ...props}) {
             backgroundColor: '#404355',
             width: '40rem',
             maxWidth: '90%',
-            maxHeight: '95vh',
-            position: 'relative'
+            maxHeight: '90vh',
+            position: 'relative',
+            overflowY: 'scroll'
         }
     }
 
@@ -40,12 +50,12 @@ export default function CardContents ({onClick, ...props}) {
                     width="0"
                     height="0"
                     sizes="100vh"
-                    className="h-full w-auto"
+                    className={`h-full w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""}`}
                     alt="Tarot Card"
                     onClick={() => setIsOpen(true)}
                 />
             </div>
-            <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={styles} className="card-back">
+            <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={styles}>
                 <div className="flex-col justify-center">
                     <div className="flex">
                         <button onClick={() => setIsOpen(false)} className="mr-0 ml-auto p-3">
@@ -69,7 +79,7 @@ export default function CardContents ({onClick, ...props}) {
                             width="0"
                             height="0"
                             sizes="100vh"
-                            className="h-60 w-auto"
+                            className={`h-60 w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""}`}
                             alt={tarotTitle}
                         />
                     </div>

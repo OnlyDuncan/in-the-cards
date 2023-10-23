@@ -309,13 +309,7 @@ export default async function CardsServer() {
     let altArray = await cardPicker();
 
     return (
-        <div className="flex flex-col justify-center">
-            <div className="flex justify-center">
-                <h1 className="text-4xl text-center mt-4">
-                    In the Cards
-                </h1>
-            </div>
-            <br />
+        <div className="flex">
             <div className="flex justify-center">
                 <Cards {...altArray} />
             </div>

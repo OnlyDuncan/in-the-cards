@@ -55,6 +55,18 @@ export default function Cards ({...props}) {
 
     return (
         <div className="flex flex-col justify-center">
+            <div className="flex justify-center">
+                <h1 className="text-4xl text-center mt-4">
+                    In the Cards
+                </h1>
+            </div>
+            <br />
+            <div className="flex justify-center">
+                <p className="flex text-center" style={{ width: "40vw" }}>
+                    Click on a facedown card to flip it, and click on a faceup card to read its meaning. Click the Redo button to get a different spread.
+                </p>
+            </div>
+            <br />
             <div className="flex justify-center mb-2">
                 <button type="button" onClick={handleClick}>
                     Redo

@@ -28,6 +28,10 @@ body {
 
 /* Card */
 
+.reversed {
+  transform: scale(-1, -1);
+}
+
 .card {
   /* Sizing */
   height: 100%;
