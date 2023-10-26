@@ -54,80 +54,82 @@ export default function Cards ({...props}) {
     }
 
     return (
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center" style={{ backgroundColor: "#322238", width: "100vw" }}>
             <div className="flex justify-center">
-                <h1 className="text-4xl text-center mt-4 darcy">
+                <h1 className="text-4xl text-center mt-4 darcy text-white">
                     In the Cards
                 </h1>
             </div>
             <br />
             <div className="flex justify-center">
                 <div className="flex-col justify-center">
-                    <p className="flex text-center halcom" style={{ width: "40vw" }}>
+                    <p className="flex text-center text-white halcom" style={{ width: "40vw" }}>
                         Click on a facedown card to flip it, and click on a faceup card to read its meaning. Click the Redo button to get a different spread of cards.
                     </p>
-                    <p className="flex text-sm text-center mt-1 halcom" style={{ width: "40vw" }}>
+                    <p className="flex text-sm text-center mt-1 text-white halcom" style={{ width: "40vw" }}>
                         Due to issues I am currently working to resolve, I would recommend hitting Redo 5 - 6  times for best results.
                     </p>
                 </div>
             </div>
             <br />
             <div className="flex justify-center mb-2">
-                <button type="button" className="darcy" onClick={handleClick}>
+                <button type="button" className="text-white darcy" onClick={handleClick}>
                     Redo
                 </button>
             </div>
-            <div className="flex flex-row justify-center">
-                <div className="flex flex-col justify-center">
-                    <div className="ml-2">
-                        <div className="flippable-card-container">
-                            <CSSTransition
-                                in={showFrontPast}
-                                timeout={300}
-                                classNames='flip'
-                            >
-                                <CardContents {...spread[0]} onClick={() => {
-                                    setShowFrontPast(false);
-                                }} />
-                            </CSSTransition>
-                            <div className="flex justify-center darcy text-align align-center ml-2 mt-2">
-                                The Past
+            <div className="flex justify-center align-center">
+                <div className="flex flex-col md:flex-row justify-center">
+                    <div className="flex flex-col justify-center mb-12 md:mb-0">
+                        <div className="md:ml-2">
+                            <div className="flippable-card-container">
+                                <CSSTransition
+                                    in={showFrontPast}
+                                    timeout={300}
+                                    classNames='flip'
+                                >
+                                    <CardContents {...spread[0]} onClick={() => {
+                                        setShowFrontPast(false);
+                                    }} />
+                                </CSSTransition>
+                                <div className="flex justify-center darcy text-align align-center text-white ml-2 mt-2">
+                                    The Past
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="flex flex-col justify-center">
-                    <div className="ml-2 mr-2">
-                        <div className="flippable-card-container">
-                            <CSSTransition
-                                in={showFrontPresent}
-                                timeout={300}
-                                classNames='flip'
-                            >
-                                <CardContents {...spread[1]} onClick={() => {
-                                    setShowFrontPresent(false);
-                                }} />
-                            </CSSTransition>
-                            <div className="flex justify-center darcy text-align align-center ml-2 mr-2 mt-2">
-                                The Present
+                    <div className="flex flex-col justify-center mb-12 md:mb-0">
+                        <div className="md:ml-3 md:mr-3">
+                            <div className="flippable-card-container">
+                                <CSSTransition
+                                    in={showFrontPresent}
+                                    timeout={300}
+                                    classNames='flip'
+                                >
+                                    <CardContents {...spread[1]} onClick={() => {
+                                        setShowFrontPresent(false);
+                                    }} />
+                                </CSSTransition>
+                                <div className="flex justify-center darcy text-align align-center text-white ml-2 mr-2 mt-2">
+                                    The Present
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="flex flex-col justify-center">
-                    <div className="mr-2">
-                        <div className="flippable-card-container">
-                            <CSSTransition
-                                in={showFrontFuture}
-                                timeout={300}
-                                classNames='flip'
-                            >
-                                <CardContents {...spread[2]} onClick={() => {
-                                    setShowFrontFuture(false);
-                                }} />
-                            </CSSTransition>
-                            <div className="flex justify-center darcy text-align align-center mr-2 mt-2">
-                                The Future
+                    <div className="flex flex-col justify-center mb-12 md:mb-0">
+                        <div className="md:mr-2">
+                            <div className="flippable-card-container">
+                                <CSSTransition
+                                    in={showFrontFuture}
+                                    timeout={300}
+                                    classNames='flip'
+                                >
+                                    <CardContents {...spread[2]} onClick={() => {
+                                        setShowFrontFuture(false);
+                                    }} />
+                                </CSSTransition>
+                                <div className="flex justify-center darcy text-align align-center text-white mr-2 mt-2">
+                                    The Future
+                                </div>
                             </div>
                         </div>
                     </div>

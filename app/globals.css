@@ -67,13 +67,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Content Styling
-  font-family: Montserrat;
-  font-weight: 800;
-  font-size: 60px;
-  color: white;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); */
 }
 
 .card-front {

@@ -60,7 +60,7 @@ export default function CardContents ({onClick, ...props}) {
                     </div>
                     <br />
                     <h1
-                        className="text-4xl text-center justify-center text-white"
+                        className="darcy text-4xl text-center justify-center text-white"
                     >
                         {tarotTitle}
                     </h1>
@@ -76,7 +76,7 @@ export default function CardContents ({onClick, ...props}) {
                         />
                     </div>
                     <br />
-                    <p className="flex text-center text-white pb-10 px-10">
+                    <p className="flex halcom text-center text-white pb-10 px-10">
                         {tarotMeaning}
                     </p>
                 </div>
