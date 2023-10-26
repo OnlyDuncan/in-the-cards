@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -104,4 +106,18 @@ body {
 
 .flip-exit-done {
   transform: rotateY(180deg);
+}
+
+/* Type */
+
+.darcy {
+  font-family: "mr-darcy", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.halcom {
+  font-family: "halcom", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }

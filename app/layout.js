@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Stuff */}
+        <link rel="stylesheet" href="https://use.typekit.net/tve3dge.css" />
       </head>
       <body>
         {children}

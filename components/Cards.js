@@ -56,24 +56,24 @@ export default function Cards ({...props}) {
     return (
         <div className="flex flex-col justify-center">
             <div className="flex justify-center">
-                <h1 className="text-4xl text-center mt-4">
+                <h1 className="text-4xl text-center mt-4 darcy">
                     In the Cards
                 </h1>
             </div>
             <br />
             <div className="flex justify-center">
                 <div className="flex-col justify-center">
-                    <p className="flex text-center" style={{ width: "40vw" }}>
+                    <p className="flex text-center halcom" style={{ width: "40vw" }}>
                         Click on a facedown card to flip it, and click on a faceup card to read its meaning. Click the Redo button to get a different spread of cards.
                     </p>
-                    <p className="flex text-sm text-center mt-1" style={{ width: "40vw" }}>
+                    <p className="flex text-sm text-center mt-1 halcom" style={{ width: "40vw" }}>
                         Due to issues I am currently working to resolve, I would recommend hitting Redo 5 - 6  times for best results.
                     </p>
                 </div>
             </div>
             <br />
             <div className="flex justify-center mb-2">
-                <button type="button" onClick={handleClick}>
+                <button type="button" className="darcy" onClick={handleClick}>
                     Redo
                 </button>
             </div>
@@ -90,7 +90,7 @@ export default function Cards ({...props}) {
                                     setShowFrontPast(false);
                                 }} />
                             </CSSTransition>
-                            <div className="flex justify-center text-align align-center ml-2 mt-2">
+                            <div className="flex justify-center darcy text-align align-center ml-2 mt-2">
                                 The Past
                             </div>
                         </div>
@@ -108,7 +108,7 @@ export default function Cards ({...props}) {
                                     setShowFrontPresent(false);
                                 }} />
                             </CSSTransition>
-                            <div className="flex justify-center text-align align-center ml-2 mr-2 mt-2">
+                            <div className="flex justify-center darcy text-align align-center ml-2 mr-2 mt-2">
                                 The Present
                             </div>
                         </div>
@@ -126,7 +126,7 @@ export default function Cards ({...props}) {
                                     setShowFrontFuture(false);
                                 }} />
                             </CSSTransition>
-                            <div className="flex justify-center text-align align-center mr-2 mt-2">
+                            <div className="flex justify-center darcy text-align align-center mr-2 mt-2">
                                 The Future
                             </div>
                         </div>
