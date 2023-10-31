@@ -1,15 +1,23 @@
-import CardBackImage from '../public/Images/CardBack.webp';
 import Modal from 'react-modal';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function CardContents ({onClick, ...props}) {
 
-    let tarotCard = props;
-    let tarotTitle = `${tarotCard.Title}`;
-    let tarotOrientation = `${tarotCard.Orientation}`;
-    let tarotImage = `${tarotCard.Image}`;
-    let tarotMeaning = `${tarotCard.Meaning}`;
+    // Correct tarot cards are being passed in and displayed on the local server. 
+    // Modal shows incorrect cards, despite Card and Title logging correctly.
+
+    const tarotCard = props;
+
+    // console.log(tarotCard);
+
+    const tarotTitle = tarotCard.Title;
+
+    // console.log(tarotTitle);
+
+    const tarotOrientation = tarotCard.Orientation;
+    const tarotImage = tarotCard.Image;
+    const tarotMeaning = tarotCard.Meaning;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +46,7 @@ export default function CardContents ({onClick, ...props}) {
         <div className="card" onClick={onClick}>
             <div className="card-back">
                 <Image
-                    src={tarotImage}
+                    src={`/Images/${tarotImage}.webp`}
                     width="0"
                     height="0"
                     sizes="100vh"
@@ -67,7 +75,7 @@ export default function CardContents ({onClick, ...props}) {
                     <br />
                     <div className="flex justify-center">
                         <Image
-                            src={tarotImage}
+                            src={`/Images/${tarotImage}.webp`}
                             width="0"
                             height="0"
                             sizes="100vh"
@@ -83,7 +91,7 @@ export default function CardContents ({onClick, ...props}) {
             </Modal>
             <div className="card-front">
                 <Image
-                    src={CardBackImage}
+                    src="/Images/CardBack.webp"
                     width="0"
                     height="0"
                     sizes="100vh"

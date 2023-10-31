@@ -33,16 +33,13 @@ function deckBuilder(arcanaArray) {
 
 }
 
-export default function Cards ({...props}) {
+export default function Cards (props) {
+
     const cardArray = [];
 
-    for (let i = 0; i < 22; i++) {
-        let tempArray = [];
-        for (let j = 0; j < 2; j++) {
-            tempArray.push(props[i][j]);
-        }
-        cardArray.push(tempArray);
-    }
+    Object.values(props).forEach((value) => {
+        cardArray.push(value);
+    });
 
     const [showFrontPast, setShowFrontPast] = useState(true);
     const [showFrontPresent, setShowFrontPresent] = useState(true);
