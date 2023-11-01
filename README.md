@@ -12,8 +12,8 @@ This is a tarot card fortune telling web application I made using React, Next, F
 
 ## Technologies
 React 18.2.0  
-Next 13.5.4 
-TailwindCSS 3.3.3 
+Next 13.5.4  
+TailwindCSS 3.3.3  
 Firebase 10.4.0
 
 ## Project Status
