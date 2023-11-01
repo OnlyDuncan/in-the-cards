@@ -1,3 +1,5 @@
+"use client";
+
 import Modal from 'react-modal';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -9,11 +11,11 @@ export default function CardContents ({onClick, ...props}) {
 
     const tarotCard = props;
 
-    // console.log(tarotCard);
+    console.log(tarotCard);
 
     const tarotTitle = tarotCard.Title;
 
-    // console.log(tarotTitle);
+    console.log(tarotTitle);
 
     const tarotOrientation = tarotCard.Orientation;
     const tarotImage = tarotCard.Image;
