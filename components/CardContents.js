@@ -48,6 +48,7 @@ export default function CardContents ({onClick, ...props}) {
         <div className="card" onClick={onClick}>
             <div className="card-back">
                 <Image
+                    unoptimized
                     src={`/Images/${tarotImage}.webp`}
                     width="0"
                     height="0"
