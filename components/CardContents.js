@@ -3,7 +3,7 @@
 import Modal from 'react-modal';
 import Image from 'next/image';
 import { useMemo } from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function CardContents ({onClick, ...props}) {
 
