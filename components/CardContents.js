@@ -2,24 +2,26 @@
 
 import Modal from 'react-modal';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CardContents ({onClick, ...props}) {
 
     // Correct tarot cards are being passed in and displayed on the local server. 
     // Modal shows incorrect cards, despite Card and Title logging correctly.
 
-    const tarotCard = props;
+    let tarotCard = props;
 
     console.log(tarotCard);
 
-    const tarotTitle = tarotCard.Title;
+    let tarotTitle = tarotCard.Title;
+    let tarotOrientation = tarotCard.Orientation;
+    let tarotImage = tarotCard.Image;
+    let tarotMeaning = tarotCard.Meaning;
 
     console.log(tarotTitle);
 
-    const tarotOrientation = tarotCard.Orientation;
-    const tarotImage = tarotCard.Image;
-    const tarotMeaning = tarotCard.Meaning;
+    let values = useMemo(() => [tarotTitle, tarotOrientation, tarotImage, tarotMeaning]);
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -46,13 +48,16 @@ export default function CardContents ({onClick, ...props}) {
 
     return (
         <div className="card" onClick={onClick}>
+            <div className="hidden">
+                {values = useMemo(() => [tarotTitle, tarotOrientation, tarotImage, tarotMeaning])}
+            </div>
             <div className="card-back">
                 <Image
-                    src={`/Images/${tarotImage}.webp`}
+                    src={`/Images/${values[2]}.webp`}
                     width="0"
                     height="0"
                     sizes="100vh"
-                    className={`h-full w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""} ${tarotOrientation === "Upright" ? "" : "reversed"}`}
+                    className={`h-full w-auto ${values[1] === "Reversed" ? "reversed" : ""} ${values[1] === "Upright" ? "" : "reversed"}`}
                     alt="Tarot Card"
                     onClick={() => setIsOpen(true)}
                 />
@@ -72,22 +77,22 @@ export default function CardContents ({onClick, ...props}) {
                     <h1
                         className="darcy text-4xl text-center justify-center text-white"
                     >
-                        {tarotTitle}
+                        {values[0]}
                     </h1>
                     <br />
                     <div className="flex justify-center">
                         <Image
-                            src={`/Images/${tarotImage}.webp`}
+                            src={`/Images/${values[2]}.webp`}
                             width="0"
                             height="0"
                             sizes="100vh"
-                            className={`h-60 w-auto ${tarotOrientation === "Reversed" ? "reversed" : ""} ${tarotOrientation === "Upright" ? "" : "reversed"}`}
-                            alt={tarotTitle}
+                            className={`h-60 w-auto ${values[1] === "Reversed" ? "reversed" : ""} ${values[1] === "Upright" ? "" : "reversed"}`}
+                            alt={values[0]}
                         />
                     </div>
                     <br />
                     <p className="flex halcom text-center text-white pb-10 px-10">
-                        {tarotMeaning}
+                        {values[3]}
                     </p>
                 </div>
             </Modal>
