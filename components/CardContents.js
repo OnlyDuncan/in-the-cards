@@ -12,14 +12,10 @@ export default function CardContents ({onClick, ...props}) {
 
     let tarotCard = props;
 
-    console.log(tarotCard);
-
     let tarotTitle = tarotCard.Title;
     let tarotOrientation = tarotCard.Orientation;
     let tarotImage = tarotCard.Image;
     let tarotMeaning = tarotCard.Meaning;
-
-    console.log(tarotTitle);
 
     let values = useMemo(() => [tarotTitle, tarotOrientation, tarotImage, tarotMeaning]);
 

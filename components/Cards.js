@@ -63,9 +63,6 @@ export default function Cards (props) {
                     <p className="flex text-center text-white halcom" style={{ width: "40vw" }}>
                         Click on a facedown card to flip it, and click on a faceup card to read its meaning. Click the Redo button to get a different spread of cards.
                     </p>
-                    <p className="flex text-sm text-center mt-1 text-white halcom" style={{ width: "40vw" }}>
-                        Due to issues I am currently working to resolve, I would recommend hitting Redo 5 - 6  times for best results.
-                    </p>
                 </div>
             </div>
             <br />
