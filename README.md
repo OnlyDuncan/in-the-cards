@@ -8,7 +8,7 @@
 * [Setup](#setup)
 
 ## General Info
-This is a tarot card fortune telling web application I made using React, Next, Firebase, and Tailwind.
+This is a tarot card fortune telling web application I made using React, Next, Firebase-Firestore, and Tailwind.
 
 ## Technologies
 React 18.2.0  
