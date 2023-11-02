@@ -17,7 +17,7 @@ TailwindCSS 3.3.3
 Firebase 10.4.0
 
 ## Project Status
-Still working on some issues with it rendering the incorrect data.
+Still want to make some adjustments to optimization and styling.
 
 ## Planned Changes
 Room for Improvement:
