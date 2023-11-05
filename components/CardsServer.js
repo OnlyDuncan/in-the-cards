@@ -1,4 +1,5 @@
 import Cards from './Cards';
+import Library from './Library';
 import { db } from '../utils/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -310,7 +311,9 @@ export default async function CardsServer() {
 
     return (
         <div className="flex">
-            <div className="flex justify-center">
+            <div className="flex-col justify-center">
+                {/* For future reference when adding the Library feature */}
+                {/* <Library {...altArray} /> */}
                 <Cards {...altArray} />
             </div>
         </div>

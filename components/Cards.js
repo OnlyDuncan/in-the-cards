@@ -85,7 +85,7 @@ export default function Cards (props) {
                                         setShowFrontPast(false);
                                     }} />
                                 </CSSTransition>
-                                <div className="flex justify-center darcy text-align align-center text-white ml-2 mt-2">
+                                <div className="flex justify-center darcy text-center text-white mt-2 whitespace-nowrap">
                                     The Past
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ export default function Cards (props) {
                                         setShowFrontPresent(false);
                                     }} />
                                 </CSSTransition>
-                                <div className="flex justify-center darcy text-align align-center text-white ml-2 mr-2 mt-2">
+                                <div className="flex justify-center darcy text-center text-white mt-2 whitespace-nowrap">
                                     The Present
                                 </div>
                             </div>
@@ -121,7 +121,7 @@ export default function Cards (props) {
                                         setShowFrontFuture(false);
                                     }} />
                                 </CSSTransition>
-                                <div className="flex justify-center darcy text-align align-center text-white mr-2 mt-2">
+                                <div className="flex justify-center darcy text-center text-white mt-2 whitespace-nowrap">
                                     The Future
                                 </div>
                             </div>
