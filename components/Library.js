@@ -6,17 +6,13 @@ import Image from 'next/image';
 
 export default function (props) {
 
-    const cardArray = [];
+    const libraryArray = [];
 
     Object.values(props).forEach((value) => {
-        cardArray.push(value);
+        libraryArray.push(value);
     });
 
     const [isOpen, setIsOpen] = useState(false);
-
-    for (let i = 0; i < cardArray.length; i++) {
-        
-    }
 
     const styles = {
         overlay: {
@@ -54,6 +50,22 @@ export default function (props) {
                                 height={30}
                             />
                         </button>
+                    </div>
+                    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-5'>
+                        {libraryArray.map(({ Title, Image, Meaning }) => (
+                            <div
+                                key={Title}
+                            >
+                                <img
+                                     src={`/Images/${Image}.webp`}
+                                     width="0"
+                                     height="0"
+                                     sizes="100vh"
+                                     className={`h-full w-auto`}
+                                     alt="Tarot Card"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </Modal>
