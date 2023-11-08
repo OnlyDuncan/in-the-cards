@@ -22,7 +22,7 @@ function deckBuilder(arcanaArray) {
 
     let deckArray = [];
 
-    for (let i = 0; i < 22; i++) {
+    for (let i = 0; i < arcanaArray.length; i++) {
         arcanaArray[i] = shuffle(arcanaArray[i]);
         deckArray.push(arcanaArray[i][0]);
     }
