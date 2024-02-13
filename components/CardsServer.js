@@ -55,10 +55,10 @@ export default async function CardsServer() {
     }
 
     return (
-        <div className="flex">
-            <div className="flex-col justify-center">
+        <div className="flex" style={{ backgroundColor: "#322238" }}>
+            <div className="flex-col justify-center" style={{ backgroundColor: "#322238" }}>
                 {/* For future reference when adding the Library feature */}
-                {/* <Library {...libraryArray} /> */}
+                <Library {...libraryArray} />
                 <Cards {...altArray} />
             </div>
         </div>

@@ -43,7 +43,7 @@ export default function CardContents ({onClick, ...props}) {
     }
 
     return (
-        <div className="card" onClick={onClick}>
+        <div className="card" onClick={onClick} style={{ backgroundColor: "#322238" }}>
             <div className="hidden">
                 {values = useMemo(() => [tarotTitle, tarotOrientation, tarotImage, tarotMeaning])}
             </div>
